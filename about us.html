@@ -1,0 +1,600 @@
+<html>
+
+<head>
+    <!-- 讓 mobile/tablet 等比例呈現網頁資訊-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        *::selection {
+            background-color: rgba(165, 118, 76, 0.5);
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Microsoft JhengHei, Noto Sans TC, PingFang TC, Apple LiGothic Medium, Roboto, Lucida Grande, Lucida Sans Unicode, sans-serif;
+            background-color: #EAE7E1;
+        }
+
+        .flex-container {
+            background-color: #EBDEBE;
+            width: 100vw;
+            height: 25vh;
+            z-index: -1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .last-words {
+            width: 33%vw;
+            height: 30%vh;
+            margin: 0;
+            margin-top: 10px;
+
+        }
+
+
+        .say-sth {
+
+            font-family: 'Noto Sans TC', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            margin-left: 13%;
+            margin-right: 13%;
+            line-height: 28px;
+            letter-spacing: 0.1em;
+            color: #000000;
+
+        }
+
+        .h1 {
+            margin-left: 13%;
+            margin-right: 13%;
+        }
+
+
+
+        span {
+            display: inline;
+
+        }
+
+
+
+
+        .text-block {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 30px;
+            text-align: center;
+            padding-top: 15px;
+            background-color: #EBDEBE;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 10px 10px 10px 10px;
+
+
+        }
+
+        .myborder {
+            width: 80vw;
+            margin-right: auto;
+            margin-left: auto;
+            border-width: 0 0 3px 0;
+            border-color: #EBDEBE;
+            border-style: solid;
+        }
+
+
+        figure.hero-image {
+
+            width: 100vw;
+        }
+
+
+
+        figure {
+            background: #EBDEBE;
+            width: 100%;
+
+        }
+
+        figure.half {
+            display: inline-block;
+            width: 48%;
+        }
+
+        figcaption {
+            color: #404040;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #EBDEBE;
+            min-height: 70px;
+            font-weight: bold;
+        }
+
+
+        nav>ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            flex-grow: 1;
+            padding: 0;
+
+        }
+
+        a:hover {
+            transform: scale(1.1);
+            transition: transform .1s linear;
+            color: #4F4F4F
+        }
+
+        a {
+            color: #4F4F4F;
+        }
+
+        a:visited,
+        a:active {
+            color: #4F4F4F;
+            text-decoration: none;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            nav>ul {
+                padding-top: 70px;
+                font-size: 30px;
+            }
+
+            .h1 {
+                font-size: 26px;
+            }
+
+            .panel {
+                position: fixed;
+                width: 50px;
+                height: 220px;
+                right: 0px;
+                top: 300px;
+                background: #9B9081;
+                border-radius: 7px;
+                z-index: 0 !important;
+
+            }
+
+            .aboutus{
+                height: 120vh;
+            }
+
+            .say-sth {
+                font-size: 24px;
+            }
+
+            .panel-icons {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: #9B9081;
+                z-index: 1;
+            }
+
+            .material-icons {
+                font-size: 48px;
+                color: white;
+                z-index: 2;
+            }
+
+            figure {
+                margin-bottom: 60px;
+            }
+
+            .text-block {
+                font-size: 32px;
+                width: 210px;
+                height: 60px;
+            }
+
+            .last-words {
+                font-size: 24px;
+            }
+
+            .material-iconsstraight {
+                display: none;
+            }
+
+            .POP {
+                width: 50px;
+                height: 50px;
+            }
+
+
+            #dialogbox {
+                display: none;
+                position: fixed;
+                background: white;
+                border-radius: 7px;
+                width: 550px;
+                height: 305px;
+                z-index: 10;
+            }
+
+            #dialogbox>div {
+                background: #FFF;
+                margin: 8px;
+            }
+
+            #dialogbox>div>#dialogboxhead {
+                background: #EBDEBE;
+                font-size: 20px;
+                padding: 10px;
+                color: black;
+                border-bottom-width: 2px;
+                border-color: black;
+                text-align: center;
+                height: 20px;
+            }
+
+            #dialogbox>div>#dialogboxbody {
+                background: #EBDEBE;
+                padding: 20px;
+                color: black;
+                height: 220px;
+                font-size: 22px;
+            }
+
+            #dialogbox>div>#dialogboxfoot {
+                background: #EBDEBE;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .talk{
+                display: none;
+            }
+
+
+
+
+
+
+        }
+
+        @media screen and (max-width: 768px) {
+            nav>ul {
+                padding-top: 20px;
+                font-size: 0px;
+            }
+
+            .material-iconsstraight {
+                position: absolute;
+                z-index: 2 !important;
+            }
+
+            .aboutus{
+                height: 35vh;
+            }
+
+            .talk{
+                width: 100vw;
+                background: #EBDEBE;
+            }
+
+            .panel {
+                position: absolute;
+                width: 170px;
+                height: 55px;
+                right: 20px;
+                top: 10px;
+                background: #9B9081;
+                border-radius: 7px;
+                z-index: 0 !important;
+            }
+
+            .POP {
+                display: none;
+            }
+
+            .h1 {
+                font-size: 14px;
+            }
+
+            .say-sth {
+                font-size: 12px;
+            }
+
+            .panel-iconsstraight {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: #9B9081;
+                z-index: 1;
+            }
+
+            .material-icons {
+                display: none;
+            }
+
+            .text-block {
+                font-size: 15px;
+                width: 80px;
+                height: 50px;
+            }
+
+            .last-words {
+                font-size: 12px;
+            }
+
+
+
+        }
+    </style>
+    <script>
+        $('#carousel-1').carousel();
+        $('#carousel-2').carousel();
+        $('#carousel-3').carousel();
+        $('#carousel-4').carousel();
+
+    </script>
+    <script src="picturefill.js"></script>
+    <script>
+        function CustomAlert() {
+            this.render = function (dialog) {
+                var winW = window.innerWidth;
+                var winH = window.innerHeight;
+                var dialogoverlay = document.getElementById('dialogoverlay');
+                var dialogbox = document.getElementById('dialogbox');
+                dialogoverlay.style.display = "block";
+                dialogoverlay.style.height = "250px";
+                dialogbox.style.left = (winW / 2) - (550 * .5) + "px";
+                dialogbox.style.top = "55%";
+                dialogbox.style.display = "block";
+                document.getElementById('dialogboxhead').innerHTML = "麻雀介紹";
+                document.getElementById('dialogboxbody').innerHTML = dialog;
+                document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">關閉</button>';
+            }
+            this.ok = function () {
+                document.getElementById('dialogbox').style.display = "none";
+                document.getElementById('dialogoverlay').style.display = "none";
+            }
+        }
+        var Alert = new CustomAlert();
+    </script>
+</head>
+
+<body>
+
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody"></div>
+            <div id="dialogboxfoot"></div>
+        </div>
+    </div>
+    <!-- navigation bar -->
+    <a name="top"></a>
+    <nav>
+        <img src="logo_front.png" style="width: 30vw;"></img>
+
+        <ul>
+            <a href="index.html">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    新聞入口
+                </li>
+            </a>
+            <a href="#關於我們">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    關於我們
+                </li>
+            </a>
+            <a href="#設計理念">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    設計理念
+                </li>
+            </a>
+            <a href="#麻雀團隊">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    麻雀團隊
+                </li>
+            </a>
+        </ul>
+    </nav>
+    <article>
+        </br></br></br></br>
+
+        <a name="關於我們"></a>
+        <div class="text-block">
+            關於我們
+        </div>
+        <div class="myborder"></div>
+        </br>
+        <div style="width:25vw;left:50%; margin:0 auto;">
+            <img onclick="Alert.render('學長姐畢業快樂！')" src="logo_footer.png" style="width:25vw; height: auto; ">
+        </div>
+        </br>
+        <div class="say-sth">
+            《麻雀雖小》是專為熟齡世代設計的新聞平台，包括一系列與熟齡族息息相關的內容，分為「健康e點零」、「環境限時批」、
+            「新知停看聽」和「真假輕鬆辨」四個部分，分別對應「健康」、「環境」、「新知」以及「事實查核」的議題。
+            </br></br></br>
+            此外，網站也嵌入了一些為熟齡世代的日常生活提供便利服務的功能性外部連結。
+            譬如，透過網頁右方滑動的圖標，熟齡世代可以關注每日氣象、空氣品質以及股市漲跌。網頁最下方的「相關連結」，則收集統整了各地樂齡活動網址。
+        </div>
+        </br></br></br>
+
+
+        <a name="設計理念"></a>
+        <div class="text-block">
+            設計理念
+        </div>
+        <div class="myborder"></div>
+        </br>
+        </br>
+
+        <div class="h1">
+            #1榕樹
+        </div>
+        </br>
+        <div style="width:80vw;left:50%; margin:0 auto;">
+            <img src="about us/about 1.png" style="width: 80vw;">
+        </div>
+        </br>
+        <div class="say-sth">
+            榕樹「氣生根」的樣子，像是鬍鬚，常被稱為「榕樹公公」。因此我們以「榕樹」形象代表長輩。
+            長壽的榕樹成為傳播科技及媒介劇變的見證者。樹冠寬廣、枝葉濃綠，能容人納蔭，廣有功德，卻也似乎與我們的世代有一些區隔。
+            </br></br>
+
+        </div>
+        <div class="h1">
+            #2麻雀
+        </div>
+        </br>
+        <div style="width:80vw;left:50%; margin:0 auto;">
+            <img src="about us/about 2.png" style="width: 80vw;">
+        </div>
+        </br>
+        <div class="say-sth">
+            與「榕樹」這一形象對應的，是棲息在榕樹枝乾，或飛翔在它身邊的麻雀，嘰嘰喳喳，活潑雀躍。
+            麻雀雖小，但仍嚮往飛向天空。這裡的「麻雀」，即象徵想要用具備貼近性的語言和形式同熟齡世代溝通的我們。
+
+            </br></br>
+
+        </div>
+        <div class="h1">
+            #3榕樹與麻雀
+        </div>
+        </br>
+        <div style="width:80vw;left:50%; margin:0 auto;">
+            <img src="about us/about 3.png" style="width: 80vw;">
+        </div>
+        </br>
+        <div class="say-sth">
+            榕樹扎根於此，麻雀予以它陪伴，並且銜來遠方的消息講給榕樹聽。我們想要藉助榕樹與麻雀之間的溫馨情境，譬喻熟齡世代與青年之間的交流與勾連。
+            受到榕樹庇蔭的麻雀，會以自己的方式回饋。我們也盼這個新聞網站作為不同世代溝通的平台，製作熟齡世代喜愛亦具品質的新聞。
+        </div>
+        </br></br>
+
+
+        <a name="麻雀團隊"></a>
+        <div class="text-block">
+            麻雀團隊
+        </div>
+        <div class="myborder"></div>
+
+
+        <div class="aboutus" style="width:60vw;  left:50%; margin:0 auto; position: relative; left:0;">
+            <img src="about us/da tree.png" style="width: 60vw; height:auto; position:absolute;">
+            <div class="POP">
+                <img src="about us/kuo.png" style="width: 10vw; position: absolute; left:53%; top: 10% ;">
+                <button
+                    onclick="Alert.render('長的像科技宅，實際上是徹頭徹尾的純種文組新聞系學生。每一門跟寫code或程式相關的課都當工程，原來是工程師啊，我還以為是記者呢！</br>其實，比起知識的寶庫，老人家更需要的是兒孫的關心。不過，如果《麻雀雖小》能在前者空檔中讓他們能有所幫助，那就太好了。')"
+                    style="width: 10vw; position: absolute; left:53%; top: 20% ;">工程 郭又華</button>
+            </div>
+
+            <div class="POP">
+                <img src="about us/xu.png" style="width: 10vw; position: absolute; left:31%; top: 10% ;">
+                <button
+                    onclick="Alert.render('「這是最好的時代，也是最壞的時代，這是智慧的時代，也是愚蠢的時代。（狄更斯《雙城記》）」。程式入門手，《麻雀雖小》在看似衰小的世代嘰嘰喳喳，試圖改變一些什麼，最後享受一場跳舞的狂喜，抑或寧靜。')"
+                    style="width: 10vw; position: absolute; left:31%; top: 20% ;">工程 徐湘芸</button>
+            </div>
+
+            <div class="POP">
+                <img src="about us/tao.png" style="width: 10vw; position: absolute; left:10%; top: 35% ;">
+                <button
+                    onclick="Alert.render('新聞交換生，一個口音很容易被帶跑的人，磕磕絆絆熟悉語言習慣的編輯。最近的目標是希望每天都可以多理解一些東西。《麻雀雖小》即是為兩個世代之間的理解而架設的一座小小小小的橋，我也在橋上短暫地站過一會兒。')"
+                    style="width: 10vw; position: absolute; left:10%; top: 45% ;">文字 陶欣園</button>
+            </div>
+
+            <div class="POP">
+                <img src="about us/chou.png" style="width: 10vw; position: absolute; left:32%; top: 35% ;">
+                <button
+                    onclick="Alert.render('不想說話，但這是一個需要說話的時代。我們總是太輕易的就放棄了說話的機會，對自己、對朋友、對自己的長輩，《麻雀雖小》希望帶來一個溝通的橋樑，試圖找到不同世代對話的可能，也許我們同樣都關心著世界，只是彼此不夠諒解。')"
+                    style="width: 10vw; position: absolute; left:32%; top: 45% ;">文字 周經倫</button>
+            </div>
+
+            <div class="POP">
+                <img src="about us/yee.png" style="width: 10vw; position: absolute; left:53%; top: 35% ;">
+                <button
+                    onclick="Alert.render('一名交換生，原韓國成均館大學新聞放送系。一個不會畫畫的網頁設計，主要負責網頁排版。《麻雀雖小》想要透過年輕人視角去捕捉適合中老年受眾適合的多種新聞報道，「動機至善，私心了無」希望我們的雖小會是一個有價值、有意義的存在。')"
+                    style="width: 10vw; position: absolute; left:53%; top: 45% ;">設計 何屹</button>
+            </div>
+
+            <div class="POP">
+                <img src="about us/xuan.png" style="width: 10vw; position: absolute; left:74%; top: 35% ;">
+                <button
+                    onclick="Alert.render('在雖小團隊裡擔任衰小設計一職。在1124後深刻認識到同溫層以外的世界，更感受到不同世代之間溝通之不足。所以說麻雀雖小，還是要努力遞新枝葉給榕樹才行！')"
+                    style="width: 10vw; position: absolute; left:74%; top: 45% ;">設計 何家璇</button>
+            </div>
+        </div>
+        <div class="talk">
+            <img src="about us/kuo1.png" style="width: 100vw;">
+        </div>
+        <div class="talk">
+                <img src="about us/xu1.png" style="width: 100vw;">
+            </div>
+            <div class="talk">
+                    <img src="about us/chou1.png" style="width: 100vw;">
+                </div>
+                <div class="talk">
+                        <img src="about us/tao1.png" style="width: 100vw;">
+                    </div>
+                    <div class="talk">
+                            <img src="about us/xuan1.png" style="width: 100vw;">
+                        </div>
+                        <div class="talk">
+                                <img src="about us/yee1.png" style="width: 100vw;">
+                            </div>
+
+
+
+        </div>
+
+
+    </article>
+    <div class="flex-container" style="background-color: #EBDEBE;  z-index: -1;">
+        <div class="last-words"><img src="logo_footer.png" style=" height: 20vh; ">
+            </img></div>
+        <div class="last-words"><span>關於我們</span></br>
+            專為中老年世代設計的新聞網站。
+            <br>
+            <a href="about us.html" title="設計理念"><span style="color: #DD5737; ">點我看作者群、設計理念。</span></a></div>
+        <div class="last-words"><span>相關連結</span></br>
+            活到老動到老，享受樂齡生活。
+            <br>
+            <a href="links.html" title="相關連結"><span style="color: #DD5737; ">點我看各縣市樂齡活動。</span></a></div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

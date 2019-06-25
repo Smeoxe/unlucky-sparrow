@@ -1,0 +1,457 @@
+<html>
+
+<head>
+    <!-- 讓 mobile/tablet 等比例呈現網頁資訊-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        *::selection {
+            background-color: rgba(165, 118, 76, 0.5);
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Microsoft JhengHei, Noto Sans TC, PingFang TC, Apple LiGothic Medium, Roboto, Lucida Grande, Lucida Sans Unicode, sans-serif;
+            background-color: #EAE7E1;
+        }
+
+        .flex-container {
+        background-color: #EBDEBE; 
+        width:100vw; 
+        height:25vh; 
+        z-index: -1;
+        display: flex;
+        
+        justify-content: space-around
+        
+         
+        }
+
+    
+        .last-words {
+        width: 33%vw;
+        height: 30%vh;
+        margin: 0;
+        margin-top: 10px;
+        
+        }
+
+        .region{
+        
+        margin-left: 15%;
+        width: 100vw;
+        height:auto;
+        
+        }
+
+        .city{
+            font-family: 'Noto Sans TC', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            
+            line-height: 33px;
+            color: #4F4F4F;
+        }
+        .city:hover{
+            border-bottom: 1px solid black;
+        }
+
+
+
+        span {
+            display: inline;
+
+        }
+
+
+
+
+        .text-block {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 30px;
+            text-align: center;
+            padding-top: 15px;
+            background-color: #EBDEBE;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 10px 10px 10px 10px;
+
+
+        }
+
+        .myborder {
+            width: 80vw;
+            margin-right: auto;
+            margin-left: auto;
+            border-width: 0 0 3px 0;
+            border-color: #EBDEBE;
+            border-style: solid;
+        }
+
+
+        figure.hero-image {
+
+            width: 100vw;
+        }
+
+
+
+        figure {
+            background: #EBDEBE;
+            width: 100%;
+
+        }
+
+        figure.half {
+            display: inline-block;
+            width: 48%;
+        }
+
+        figcaption {
+            color: #404040;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #EBDEBE;
+            min-height: 70px;
+        }
+
+
+        nav>ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            flex-grow: 1;
+            padding: 0;
+
+        }
+
+
+
+
+
+        a:hover {
+            transform: scale(1.1);
+            transition: transform .1s linear;
+            color: #4F4F4F
+        }
+
+        a {
+            color: #4F4F4F;
+        }
+
+        a:visited,
+        a:active {
+            color: #4F4F4F;
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            nav>ul {
+                padding-top: 70px;
+                font-size: 30px;
+            }     
+            
+        
+
+            figure {
+                margin-bottom: 60px;
+            }
+
+            .text-block {
+                font-size: 32px;
+                width: 210px;
+                height: 60px;
+            }
+
+            .last-words {
+                font-size: 24px;
+            }
+
+            .city{
+                font-size: 24px;
+            }
+            
+
+        }
+
+        @media screen and (max-width: 768px) {
+            nav>ul {
+                padding-top: 20px;
+                font-size: 0px;
+            }
+
+        
+            .text-block {
+                font-size: 15px;
+                width: 80px;
+                height: 50px;
+            }
+
+            .last-words {
+                font-size: 12px;
+            }
+
+            .city{
+                font-size:14px;
+            }
+
+
+
+        }
+    </style>
+    <script>
+        $('#carousel-1').carousel();
+        $('#carousel-2').carousel();
+        $('#carousel-3').carousel();
+        $('#carousel-4').carousel();
+    </script>
+    <script src="picturefill.js"></script>
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <a name="top"></a>
+    <nav>
+        <img src="logo_front.png" style="width: 30vw;"></img>
+
+        <ul>
+            <a href="#北部區域">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    北部區域
+                </li>
+            </a>
+            <a href="#中部區域">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    中部區域
+                </li>
+            </a>
+            <a href="#南部區域">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    南部區域
+                </li>
+            </a>
+            <a href="#東部區域">
+                <li style="border-bottom: 1.5px solid #4F4F4F;">
+                    東部區域
+                </li>
+            </a>
+        </ul>
+    </nav>
+    <article>
+        </br></br></br></br>
+
+        <a name="北部區域"></a>
+        <div class="text-block">
+            北部區域
+        </div>
+        <div class="myborder"></div>
+        </br></br></br>
+
+        <div class="region" style="position: relative;">
+            <img src="link between worlds/north.png" style="width: 25vw; ">
+            
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Keelung/KeelungIndex ">
+                <div class="city" style="position:absolute; right:50%; top: 15%;">
+                    基隆市
+                </div></a>         
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Taipei/TaipeiIndex">
+                <div class="city" style="position:absolute; right:50%; top: 35%;">
+                    台北市
+                </div></a>
+
+             <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Xinbei/XinbeiIndex">
+                <div class="city" style="position:absolute; right:50%; top: 55%;">
+                    新北市
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Taoyuan/TaoyuanIndex">
+                <div class="city" style="position:absolute; right:50%; top: 75%;">
+                    桃園市
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Hsinchu/HsinchuIndex ">
+                <div class="city" style="position:absolute; right:35%; top: 15%;">
+                    新竹市
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Hsinchu/HsinchuIndex ">
+                <div class="city" style="position:absolute; right:35%; top: 35%;">
+                    新竹縣
+                </div></a>
+            
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Yilan/YilanIndex ">
+                <div class="city" style="position:absolute; right:35%; top: 55%;">
+                    宜蘭縣
+                </div></a>
+                
+        </div>
+    </br></br></br>
+
+      
+
+
+
+        <a name="中部區域"></a>
+        <div class="text-block">
+               中部區域
+        </div>
+        <div class="myborder"></div>
+        </br></br></br>
+        <div class="region" style="position: relative;">
+            <img src="link between worlds/mid.png" style="width: 25vw; ">
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Miaoli/MiaoliIndex ">
+                <div class="city" style="position:absolute; right:50%; top: 15%;">
+                    苗栗縣
+                </div></a>         
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Taichung/TaichungIndex">
+                <div class="city" style="position:absolute; right:50%; top: 35%;">
+                    台中市
+                </div></a>
+
+             <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Changhua/ChanghuaIndex">
+                <div class="city" style="position:absolute; right:50%; top: 55%;">
+                    彰化縣
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Yunlin/YunlinIndex">
+                <div class="city" style="position:absolute; right:50%; top: 75%;">
+                    雲林縣
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Nantou/NantouIndex ">
+                <div class="city" style="position:absolute; right:35%; top: 15%;">
+                    南投縣
+                </div></a>
+
+            
+        </div>
+    </br></br></br>
+
+
+        
+        <a name="南部區域"></a>
+        <div class="text-block">
+                南部區域
+
+        </div>
+        <div class="myborder"></div>
+    </br>
+        <div class="region" style="position: relative;">
+            <img src="link between worlds/south.png" style="width: 20vw; ">
+
+            
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Chiayi/ChiayiIndex">
+                <div class="city" style="position:absolute; right:50%; top: 15%;">
+                    嘉義市
+                </div></a>         
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/ChiayiCounty/ChiayiCountyIndex">
+                <div class="city" style="position:absolute; right:50%; top: 35%;">
+                    嘉義縣
+                </div></a>
+
+             <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Tainan/TainanIndex">
+                <div class="city" style="position:absolute; right:50%; top: 55%;">
+                    台南市
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Kaohsiung/KaohsiungIndex">
+                <div class="city" style="position:absolute; right:50%; top: 75%;">
+                    高雄市
+                </div></a>
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Pingtung/PingtungIndex">
+                <div class="city" style="position:absolute; right:35%; top: 15%;">
+                    屏東縣
+                </div></a>
+        </div>
+
+
+        <a name="東部區域"></a>
+        <div class="text-block">
+                東部區域
+                
+        </div>
+        <div class="myborder"></div>
+    </br>
+        <div class="region" style="position: relative;">
+            <img src="link between worlds/east.png" style="width:15vw; ">
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Hualien/HualienIndex">
+                <div class="city" style="position:absolute; right:50%; top: 15%;">
+                    花蓮縣
+                </div></a>         
+
+            <a href="https://moe.senioredu.moe.gov.tw/HomeSon/Taitung/TaitungIndex">
+                <div class="city" style="position:absolute; right:50%; top: 35%;">
+                    台東縣
+                </div></a>
+        </div>
+
+
+        <a href="index.html">
+        <div class="text-block" style="background-color: #EAD26C;">
+            點我回首頁
+                
+        </div>
+    </a>
+         
+    
+      
+    </article>
+
+</br>
+</br>
+   
+<div class="flex-container" style="background-color: #EBDEBE;  z-index: -1;">
+    <div class="last-words"><img src="logo_footer.png" style=" height: 20vh; ">
+        </img></div>
+    <div class="last-words"><span>關於我們</span></br>
+        專為中老年世代設計的新聞網站。
+        <br>
+        <a href="about us.html" title="設計理念"><span style="color: #DD5737; ">點我看作者群、設計理念。</span></a></div>
+    <div class="last-words"><span>相關連結</span></br>
+        活到老動到老，享受樂齡生活。
+        <br>
+        <a href="links.html" title="相關連結"><span style="color: #DD5737; ">點我看各縣市樂齡活動。</span></a></div>
+</div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
